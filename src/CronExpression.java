@@ -1,7 +1,7 @@
 /**
  * @author Philipp Daniels
  */
-public interface CronExpressionBuilder {
+public interface CronExpression {
 
     /**
      * Runs once every hour
