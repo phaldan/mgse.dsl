@@ -38,7 +38,8 @@ public class CronExpressionBuilder implements CronExpression {
 
     @Override
     public YearContext yearly() {
-        return null;
+        expression.setDayOfWeek(WILDCARD);
+        return new YearContextBuilder();
     }
 
     private class MinuteContextBuilder implements MinuteContext {
@@ -116,6 +117,94 @@ public class CronExpressionBuilder implements CronExpression {
         public HourContext on(int day) {
             expression.setDayOfMonth(String.valueOf(day));
             return new HourContextBuilder();
+        }
+    }
+
+    private class YearContextBuilder implements YearContext {
+
+        private static final String JANUARY = "1";
+        private static final String FEBRUARY = "2";
+        private static final String MARCH = "3";
+        private static final String APRIL = "4";
+        private static final String MAY = "5";
+        private static final String JUNE = "6";
+        private static final String JULY = "7";
+        private static final String AUGUST = "8";
+        private static final String SEPTEMBER = "9";
+        private static final String OCTOBER = "10";
+        private static final String NOVEMBER = "11";
+        private static final String DECEMBER = "12";
+
+        @Override
+        public MonthContext inJanuary() {
+            expression.setMonth(JANUARY);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inFebruary() {
+            expression.setMonth(FEBRUARY);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inMarch() {
+            expression.setMonth(MARCH);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inApril() {
+            expression.setMonth(APRIL);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inMay() {
+            expression.setMonth(MAY);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inJune() {
+            expression.setMonth(JUNE);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inJuly() {
+            expression.setMonth(JULY);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inAugust() {
+            expression.setMonth(AUGUST);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inSeptember() {
+            expression.setMonth(SEPTEMBER);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inOctober() {
+            expression.setMonth(OCTOBER);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inNovember() {
+            expression.setMonth(NOVEMBER);
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inDecember() {
+            expression.setMonth(DECEMBER);
+            return new MonthContextBuilder();
         }
     }
 }

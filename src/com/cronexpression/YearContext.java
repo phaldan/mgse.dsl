@@ -13,7 +13,7 @@ public interface YearContext {
 
     MonthContext inApril();
 
-    MonthContext inMai();
+    MonthContext inMay();
 
     MonthContext inJune();
 
