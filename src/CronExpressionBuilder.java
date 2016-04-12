@@ -18,4 +18,8 @@ public interface CronExpressionBuilder {
      */
     WeekContext weekly();
 
+    /**
+     * Runs once per month
+     */
+    MonthContext monthly();
 }
