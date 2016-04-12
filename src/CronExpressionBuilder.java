@@ -13,4 +13,9 @@ public interface CronExpressionBuilder {
      */
     HourContext daily();
 
+    /**
+     * Runs once per week
+     */
+    WeekContext weekly();
+
 }
