@@ -22,4 +22,10 @@ public interface CronExpressionBuilder {
      * Runs once per month
      */
     MonthContext monthly();
+
+    /**
+     * Runs once per year
+     */
+    YearContext yearly();
+
 }
