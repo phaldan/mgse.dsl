@@ -32,7 +32,8 @@ public class CronExpressionBuilder implements CronExpression {
 
     @Override
     public MonthContext monthly() {
-        return null;
+        expression.setDayOfWeek(WILDCARD).setMonth(WILDCARD);
+        return new MonthContextBuilder();
     }
 
     @Override
@@ -105,6 +106,15 @@ public class CronExpressionBuilder implements CronExpression {
         @Override
         public HourContext onSunday() {
             expression.setDayOfWeek(SUNDAY);
+            return new HourContextBuilder();
+        }
+    }
+
+    private class MonthContextBuilder implements MonthContext {
+
+        @Override
+        public HourContext on(int day) {
+            expression.setDayOfMonth(String.valueOf(day));
             return new HourContextBuilder();
         }
     }
