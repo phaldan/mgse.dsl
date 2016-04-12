@@ -7,7 +7,7 @@ public interface WeekContext {
 
     HourContext onMonday();
 
-    HourContext onThuesday();
+    HourContext onTuesday();
 
     HourContext onWednesday();
 

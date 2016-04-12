@@ -9,6 +9,7 @@ import com.cronexpression.model.Expression;
 public class CronExpressionBuilder implements CronExpression {
 
     private static final String WILDCARD = "*";
+
     private Expression expression = new Expression();
 
     @Override
@@ -25,7 +26,8 @@ public class CronExpressionBuilder implements CronExpression {
 
     @Override
     public WeekContext weekly() {
-        return null;
+        expression.setDayOfMonth(WILDCARD).setMonth(WILDCARD);
+        return new WeekContextBuilder();
     }
 
     @Override
@@ -51,6 +53,59 @@ public class CronExpressionBuilder implements CronExpression {
         @Override
         public String at(int hour, int minute) {
             return expression.setHour(String.valueOf(hour)).setMinute(String.valueOf(minute)).toString();
+        }
+    }
+
+    private class WeekContextBuilder implements WeekContext {
+
+        private static final String MONDAY = "1";
+        private static final String TUESDAY = "2";
+        private static final String WEDNESDAY = "3";
+        private static final String THURSDAY = "4";
+        private static final String FRIDAY = "5";
+        private static final String SATURDAY = "6";
+        private static final String SUNDAY = "7";
+
+        @Override
+        public HourContext onMonday() {
+            expression.setDayOfWeek(MONDAY);
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onTuesday() {
+            expression.setDayOfWeek(TUESDAY);
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onWednesday() {
+            expression.setDayOfWeek(WEDNESDAY);
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onThursday() {
+            expression.setDayOfWeek(THURSDAY);
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onFriday() {
+            expression.setDayOfWeek(FRIDAY);
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onSaturday() {
+            expression.setDayOfWeek(SATURDAY);
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onSunday() {
+            expression.setDayOfWeek(SUNDAY);
+            return new HourContextBuilder();
         }
     }
 }
