@@ -46,6 +46,11 @@ public class CronExpressionBuilder implements CronExpression {
 
         @Override
         public String at(int minute) {
+        	
+        	if(minute < 0 || minute > 59) {
+        		throw new IllegalArgumentException("Invalid value '" + minute + "' for minute.");
+        	}
+        	
             return expression.setMinute(String.valueOf(minute)).toString();
         }
     }
@@ -54,6 +59,13 @@ public class CronExpressionBuilder implements CronExpression {
 
         @Override
         public String at(int hour, int minute) {
+        	if(hour < 0 || hour > 23) {
+        		throw new IllegalArgumentException("Invalid value '" + hour + "' for hour.");
+        	}
+        	if(minute < 0 || minute > 59) {
+        		throw new IllegalArgumentException("Invalid value '" + minute + "' for minute.");
+        	}
+        	
             return expression.setHour(String.valueOf(hour)).setMinute(String.valueOf(minute)).toString();
         }
     }
