@@ -6,7 +6,7 @@ import static com.cronexpression.model.Factory.*;
 /**
  * @author Philipp Daniels
  */
-public class Main {
+public class Example {
 
     /**
      * @param args Command line arguments
