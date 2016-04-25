@@ -25,7 +25,7 @@ public class Factory {
      * @param value Integer value of an month.
      * @return New Month instance
      */
-    public static Month month(int value) {
+    private static Month month(int value) {
         return new Month(value);
     }
 
@@ -41,7 +41,7 @@ public class Factory {
      * @param value Integer value of an day.
      * @return New Month instance
      */
-    public static WeekDay weekDay(int value) {
+    private static WeekDay weekDay(int value) {
         return new WeekDay(value);
     }
 
