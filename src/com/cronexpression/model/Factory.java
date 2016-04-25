@@ -129,6 +129,55 @@ public class Factory {
         return month(12);
     }
 
+    /**
+     * @return WeekDay instance for Monday
+     */
+    public static WeekDay monday() {
+        return weekDay(1);
+    }
+
+    /**
+     * @return WeekDay instance for Tuesday
+     */
+    public static WeekDay tuesday() {
+        return weekDay(2);
+    }
+
+    /**
+     * @return WeekDay instance for Wednesday
+     */
+    public static WeekDay wednesday() {
+        return weekDay(3);
+    }
+
+    /**
+     * @return WeekDay instance for Thursday
+     */
+    public static WeekDay thursday() {
+        return weekDay(4);
+    }
+
+    /**
+     * @return WeekDay instance for Friday
+     */
+    public static WeekDay friday() {
+        return weekDay(5);
+    }
+
+    /**
+     * @return WeekDay instance for Saturday
+     */
+    public static WeekDay saturday() {
+        return weekDay(6);
+    }
+
+    /**
+     * @return WeekDay instance for Sunday
+     */
+    public static WeekDay sunday() {
+        return weekDay(7);
+    }
+
     public static class Minute {
 
         private int value;
