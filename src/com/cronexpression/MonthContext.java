@@ -1,5 +1,7 @@
 package com.cronexpression;
 
+import com.cronexpression.model.Factory;
+
 /**
  * @author Philipp Daniels
  */
@@ -11,5 +13,5 @@ public interface MonthContext {
      * @param day Day of month
      * @return Return next level
      */
-    HourContext on(int day);
+    HourContext on(Factory.MonthDay day);
 }

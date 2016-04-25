@@ -2,6 +2,7 @@ package com.cronexpression.builder;
 
 import com.cronexpression.*;
 import com.cronexpression.model.Expression;
+import com.cronexpression.model.Factory;
 
 /**
  * @author Philipp Daniels
@@ -45,28 +46,31 @@ public class CronExpressionBuilder implements CronExpression {
     private class MinuteContextBuilder implements MinuteContext {
 
         @Override
-        public String at(int minute) {
-        	
-        	if(minute < 0 || minute > 59) {
-        		throw new IllegalArgumentException("Invalid value '" + minute + "' for minute.");
-        	}
-        	
-            return expression.setMinute(String.valueOf(minute)).toString();
+        public String at(Factory.Minute minute) {
+
+            if (minute.getValue() < 0 || minute.getValue() > 59) {
+                throw new IllegalArgumentException("Invalid value '" + minute.getValue() + "' for minute.");
+            }
+
+            return expression.setMinute(String.valueOf(minute.getValue())).toString();
         }
     }
 
     private class HourContextBuilder implements HourContext {
 
         @Override
-        public String at(int hour, int minute) {
-        	if(hour < 0 || hour > 23) {
-        		throw new IllegalArgumentException("Invalid value '" + hour + "' for hour.");
+        public String at(Factory.Hour hour, Factory.Minute minute) {
+            if (hour.getValue() < 0 || hour.getValue() > 23) {
+                throw new IllegalArgumentException("Invalid value '" + hour + "' for hour.");
         	}
-        	if(minute < 0 || minute > 59) {
-        		throw new IllegalArgumentException("Invalid value '" + minute + "' for minute.");
+            if (minute.getValue() < 0 || minute.getValue() > 59) {
+                throw new IllegalArgumentException("Invalid value '" + minute + "' for minute.");
         	}
-        	
-            return expression.setHour(String.valueOf(hour)).setMinute(String.valueOf(minute)).toString();
+
+            return expression
+                    .setHour(String.valueOf(hour.getValue()))
+                    .setMinute(String.valueOf(minute.getValue()))
+                    .toString();
         }
     }
 
@@ -126,8 +130,8 @@ public class CronExpressionBuilder implements CronExpression {
     private class MonthContextBuilder implements MonthContext {
 
         @Override
-        public HourContext on(int day) {
-            expression.setDayOfMonth(String.valueOf(day));
+        public HourContext on(Factory.MonthDay day) {
+            expression.setDayOfMonth(String.valueOf(day.getValue()));
             return new HourContextBuilder();
         }
     }
