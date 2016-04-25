@@ -1,5 +1,7 @@
 package com.cronexpression.model;
 
+import com.cronexpression.Minute;
+
 /**
  * @author Philipp Daniels
  */
@@ -10,7 +12,7 @@ public class Factory {
      * @return New Minute instance
      */
     public static Minute minute(int value) {
-        return new Minute(value);
+        return new MinuteUnity(value);
     }
 
     /**
@@ -191,8 +193,8 @@ public class Factory {
         }
     }
 
-    public static class Minute extends Unit {
-        protected Minute(int value) {
+    public static class MinuteUnity extends Unit implements Minute {
+        protected MinuteUnity(int value) {
             super(value);
         }
     }

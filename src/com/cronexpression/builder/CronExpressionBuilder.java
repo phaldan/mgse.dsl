@@ -46,7 +46,7 @@ public class CronExpressionBuilder implements CronExpression {
     private class MinuteContextBuilder implements MinuteContext {
 
         @Override
-        public String at(Factory.Minute minute) {
+        public String at(Minute minute) {
 
             if (minute.getValue() < 0 || minute.getValue() > 59) {
                 throw new IllegalArgumentException("Invalid value '" + minute.getValue() + "' for minute.");
@@ -59,7 +59,7 @@ public class CronExpressionBuilder implements CronExpression {
     private class HourContextBuilder implements HourContext {
 
         @Override
-        public String at(Factory.Hour hour, Factory.Minute minute) {
+        public String at(Factory.Hour hour, Minute minute) {
             if (hour.getValue() < 0 || hour.getValue() > 23) {
                 throw new IllegalArgumentException("Invalid value '" + hour + "' for hour.");
         	}
