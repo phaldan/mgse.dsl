@@ -59,7 +59,7 @@ public class CronExpressionBuilder implements CronExpression {
     private class HourContextBuilder implements HourContext {
 
         @Override
-        public String at(Factory.Hour hour, Minute minute) {
+        public String at(Hour hour, Minute minute) {
             if (hour.getValue() < 0 || hour.getValue() > 23) {
                 throw new IllegalArgumentException("Invalid value '" + hour + "' for hour.");
         	}

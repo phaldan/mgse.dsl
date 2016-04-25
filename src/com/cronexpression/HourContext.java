@@ -1,7 +1,5 @@
 package com.cronexpression;
 
-import com.cronexpression.model.Factory;
-
 /**
  * @author Philipp Daniels
  */
@@ -14,5 +12,5 @@ public interface HourContext {
      * @param minute Minute of an hour
      * @return Returns cron expression as string
      */
-    String at(Factory.Hour hour, Minute minute);
+    String at(Hour hour, Minute minute);
 }

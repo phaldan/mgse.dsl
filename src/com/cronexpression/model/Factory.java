@@ -1,5 +1,6 @@
 package com.cronexpression.model;
 
+import com.cronexpression.Hour;
 import com.cronexpression.Minute;
 
 /**
@@ -20,7 +21,7 @@ public class Factory {
      * @return New Hour instance
      */
     public static Hour hour(int value) {
-        return new Hour(value);
+        return new HourUnity(value);
     }
 
     /**
@@ -199,8 +200,8 @@ public class Factory {
         }
     }
 
-    public static class Hour extends Unit {
-        protected Hour(int value) {
+    public static class HourUnity extends Unit implements Hour {
+        protected HourUnity(int value) {
             super(value);
         }
     }
