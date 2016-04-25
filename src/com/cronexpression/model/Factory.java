@@ -9,7 +9,7 @@ public class Factory {
      * @param value Integer value of a minute.
      * @return New Minute instance
      */
-    public static Minute Minute(int value) {
+    public static Minute minute(int value) {
         return new Minute(value);
     }
 
@@ -17,7 +17,7 @@ public class Factory {
      * @param value Integer value of an hour.
      * @return New Hour instance
      */
-    public static Hour Hour(int value) {
+    public static Hour hour(int value) {
         return new Hour(value);
     }
 
@@ -25,7 +25,7 @@ public class Factory {
      * @param value Integer value of an month.
      * @return New Month instance
      */
-    public static Month Month(int value) {
+    public static Month month(int value) {
         return new Month(value);
     }
 
@@ -33,7 +33,7 @@ public class Factory {
      * @param value Integer value of an day.
      * @return New Month instance
      */
-    public static MonthDay Day(int value) {
+    public static MonthDay day(int value) {
         return new MonthDay(value);
     }
 
@@ -41,7 +41,7 @@ public class Factory {
      * @param value Integer value of an day.
      * @return New Month instance
      */
-    public static WeekDay WeekDay(int value) {
+    public static WeekDay weekDay(int value) {
         return new WeekDay(value);
     }
 
@@ -49,84 +49,84 @@ public class Factory {
      * @return Month instance for January
      */
     public static Month january() {
-        return Month(1);
+        return month(1);
     }
 
     /**
      * @return Month instance for February
      */
     public static Month february() {
-        return Month(2);
+        return month(2);
     }
 
     /**
      * @return Month instance for March
      */
     public static Month march() {
-        return Month(3);
+        return month(3);
     }
 
     /**
      * @return Month instance for April
      */
     public static Month april() {
-        return Month(4);
+        return month(4);
     }
 
     /**
      * @return Month instance for May
      */
     public static Month may() {
-        return Month(5);
+        return month(5);
     }
 
     /**
      * @return Month instance for June
      */
     public static Month june() {
-        return Month(6);
+        return month(6);
     }
 
     /**
      * @return Month instance for July
      */
     public static Month july() {
-        return Month(7);
+        return month(7);
     }
 
     /**
      * @return Month instance for August
      */
     public static Month august() {
-        return Month(8);
+        return month(8);
     }
 
     /**
      * @return Month instance for September
      */
     public static Month september() {
-        return Month(9);
+        return month(9);
     }
 
     /**
      * @return Month instance for October
      */
     public static Month october() {
-        return Month(10);
+        return month(10);
     }
 
     /**
      * @return Month instance for November
      */
     public static Month november() {
-        return Month(11);
+        return month(11);
     }
 
     /**
      * @return Month instance for December
      */
     public static Month december() {
-        return Month(12);
+        return month(12);
     }
 
     public static class Minute {
