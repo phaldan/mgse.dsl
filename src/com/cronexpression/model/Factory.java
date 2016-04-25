@@ -178,68 +178,46 @@ public class Factory {
         return weekDay(7);
     }
 
-    public static class Minute {
+    private static abstract class Unit {
 
         private int value;
 
+        protected Unit(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    public static class Minute extends Unit {
         protected Minute(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
+            super(value);
         }
     }
 
-    public static class Hour {
-
-        private int value;
-
+    public static class Hour extends Unit {
         protected Hour(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
+            super(value);
         }
     }
 
-    public static class Month {
-
-        private int value;
-
+    public static class Month extends Unit {
         protected Month(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
+            super(value);
         }
     }
 
-    public static class MonthDay {
-
-        private int value;
-
+    public static class MonthDay extends Unit {
         protected MonthDay(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
+            super(value);
         }
     }
 
-    public static class WeekDay {
-
-        private int value;
-
+    public static class WeekDay extends Unit {
         protected WeekDay(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
+            super(value);
         }
     }
 }
