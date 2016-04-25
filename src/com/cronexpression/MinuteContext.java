@@ -12,4 +12,11 @@ public interface MinuteContext {
      * @return Returns cron expression string
      */
     String at(Minute minute);
+
+    /**
+     * @param start Interval start inclusive
+     * @param end   Interval end inclusive
+     * @return MinuteContext
+     */
+    MinuteContext between(Hour start, Hour end);
 }

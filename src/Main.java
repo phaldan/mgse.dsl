@@ -15,6 +15,8 @@ public class Main {
 
         //Run hourly at 5 past
         System.out.println(cron().hourly().at(minute(5)));
+        //Run hourly between 11-20 at 5 past
+        System.out.println(cron().hourly().between(hour(11), hour(20)).at(minute(5)));
         //Run daily at 18:00
         System.out.println(cron().daily().at(hour(18), minute(0)));
         //Run weekly on Friday at 14:30

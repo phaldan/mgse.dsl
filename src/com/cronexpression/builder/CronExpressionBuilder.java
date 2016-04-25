@@ -2,6 +2,7 @@ package com.cronexpression.builder;
 
 import com.cronexpression.*;
 import com.cronexpression.model.Expression;
+import com.cronexpression.model.Range;
 
 /**
  * @author Philipp Daniels
@@ -52,6 +53,14 @@ public class CronExpressionBuilder implements CronExpression {
             }
 
             return expression.setMinute(String.valueOf(minute.getValue())).toString();
+        }
+
+        @Override
+        public MinuteContext between(Hour start, Hour end) {
+            Range range = new Range();
+            range.setStart(start.getValue()).setEnd(end.getValue());
+            expression.setHour(range.toString());
+            return this;
         }
     }
 
