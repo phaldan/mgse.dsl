@@ -2,7 +2,6 @@ package com.cronexpression.builder;
 
 import com.cronexpression.*;
 import com.cronexpression.model.Expression;
-import com.cronexpression.model.Factory;
 
 /**
  * @author Philipp Daniels
@@ -130,7 +129,7 @@ public class CronExpressionBuilder implements CronExpression {
     private class MonthContextBuilder implements MonthContext {
 
         @Override
-        public HourContext on(Factory.MonthDay day) {
+        public HourContext on(MonthDay day) {
             expression.setDayOfMonth(String.valueOf(day.getValue()));
             return new HourContextBuilder();
         }

@@ -2,6 +2,7 @@ package com.cronexpression.model;
 
 import com.cronexpression.Hour;
 import com.cronexpression.Minute;
+import com.cronexpression.MonthDay;
 
 /**
  * @author Philipp Daniels
@@ -37,7 +38,7 @@ public class Factory {
      * @return New Month instance
      */
     public static MonthDay day(int value) {
-        return new MonthDay(value);
+        return new MonthDayUnity(value);
     }
 
     /**
@@ -212,8 +213,8 @@ public class Factory {
         }
     }
 
-    public static class MonthDay extends Unit {
-        protected MonthDay(int value) {
+    public static class MonthDayUnity extends Unit implements MonthDay {
+        protected MonthDayUnity(int value) {
             super(value);
         }
     }
