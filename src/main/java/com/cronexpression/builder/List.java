@@ -1,4 +1,4 @@
-package com.cronexpression.model;
+package com.cronexpression.builder;
 
 import java.util.LinkedList;
 

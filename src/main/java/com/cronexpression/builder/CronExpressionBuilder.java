@@ -1,8 +1,6 @@
 package com.cronexpression.builder;
 
 import com.cronexpression.*;
-import com.cronexpression.model.Expression;
-import com.cronexpression.model.Range;
 
 /**
  * @author Philipp Daniels
