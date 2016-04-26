@@ -1,0 +1,172 @@
+package com.cronexpression.builder.${name};
+
+import com.cronexpression.*;
+
+/**
+ * @author Philipp Daniels
+ */
+public class CronExpressionBuilder implements CronExpression {
+
+    private Expression expression = new Expression();
+
+    @Override
+    public MinuteContext hourly() {
+        return new MinuteContextBuilder();
+    }
+
+    @Override
+    public HourContext daily() {
+        return new HourContextBuilder();
+    }
+
+    @Override
+    public WeekContext weekly() {
+        return new WeekContextBuilder();
+    }
+
+    @Override
+    public MonthContext monthly() {
+        return new MonthContextBuilder();
+    }
+
+    @Override
+    public YearContext yearly() {
+        return new YearContextBuilder();
+    }
+
+    private class MinuteContextBuilder implements MinuteContext {
+
+        @Override
+        public String at(Minute minute) {
+            return expression.setMinute(String.valueOf(minute.getValue())).toString();
+        }
+
+        @Override
+        public MinuteContext between(Hour start, Hour end) {
+            Range range = new Range();
+            range.setStart(start.getValue()).setEnd(end.getValue());
+            expression.setHour(range.toString());
+            return this;
+        }
+    }
+
+    private class HourContextBuilder implements HourContext {
+
+        @Override
+        public String at(Hour hour, Minute minute) {
+            return expression
+                    .setHour(String.valueOf(hour.getValue()))
+                    .setMinute(String.valueOf(minute.getValue()))
+                    .toString();
+        }
+    }
+
+    private class WeekContextBuilder implements WeekContext {
+
+        @Override
+        public HourContext onMonday() {
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onTuesday() {
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onWednesday() {
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onThursday() {
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onFriday() {
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onSaturday() {
+            return new HourContextBuilder();
+        }
+
+        @Override
+        public HourContext onSunday() {
+            return new HourContextBuilder();
+        }
+    }
+
+    private class MonthContextBuilder implements MonthContext {
+
+        @Override
+        public HourContext on(MonthDay day) {
+            return new HourContextBuilder();
+        }
+    }
+
+    private class YearContextBuilder implements YearContext {
+
+        @Override
+        public MonthContext inJanuary() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inFebruary() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inMarch() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inApril() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inMay() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inJune() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inJuly() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inAugust() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inSeptember() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inOctober() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inNovember() {
+            return new MonthContextBuilder();
+        }
+
+        @Override
+        public MonthContext inDecember() {
+            return new MonthContextBuilder();
+        }
+    }
+}

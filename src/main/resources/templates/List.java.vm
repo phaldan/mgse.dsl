@@ -1,0 +1,23 @@
+package com.cronexpression.builder.${name};
+
+import java.util.LinkedList;
+
+public class List {
+
+    private java.util.List<String> entries = new LinkedList<>();
+
+    public List add(int value) {
+        entries.add(String.valueOf(value));
+        return this;
+    }
+
+    public List add(Range value) {
+        entries.add(value.toString());
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "";
+    }
+}
