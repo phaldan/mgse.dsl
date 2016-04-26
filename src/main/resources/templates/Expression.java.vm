@@ -1,4 +1,4 @@
-package com.cronexpression.builder.${name};
+package com.cronexpression.builder.${component.name};
 
 public class Expression {
 
@@ -35,6 +35,6 @@ public class Expression {
 
     @Override
     public String toString() {
-        return "";
+        return "Example for \"${component.name}\" builder";
     }
 }

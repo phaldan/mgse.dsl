@@ -24,9 +24,8 @@ public class Velocity {
         Expression expression = new ExampleExpression();
         VelocityContext context = new VelocityContext();
         context.put("component", expression);
-        context.put("name", expression.name);
 
-        String path = PATH + File.separator + expression.name;
+        String path = PATH + File.separator + expression.getName();
         new File(path).mkdir();
         generateFile(path, "Expression.java", context);
         generateFile(path, "Factory.java", context);
@@ -49,7 +48,7 @@ public class Velocity {
 
     private static class ExampleExpression extends Expression {
         public ExampleExpression() {
-            super("Example");
+            super("Philipp");
         }
     }
 }

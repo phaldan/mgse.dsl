@@ -5,9 +5,13 @@ package com.cronexpression.meta;
  */
 public class Expression {
 
-    public String name;
+    private String name;
 
     public Expression(String name) {
         this.name = name.toLowerCase();
+    }
+
+    public String getName() {
+        return name;
     }
 }
