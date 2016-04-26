@@ -1,4 +1,4 @@
-package com.cronexpression.builder;
+package com.cronexpression.builder.cron;
 
 /**
  * @author Philipp Daniels

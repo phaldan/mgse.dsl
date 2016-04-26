@@ -1,7 +1,7 @@
 import com.cronexpression.CronExpression;
-import com.cronexpression.builder.CronExpressionBuilder;
+import com.cronexpression.builder.cron.CronExpressionBuilder;
 
-import static com.cronexpression.builder.Factory.*;
+import static com.cronexpression.builder.cron.Factory.*;
 
 /**
  * @author Philipp Daniels
