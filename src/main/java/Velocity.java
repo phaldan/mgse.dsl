@@ -1,3 +1,5 @@
+import com.cronexpression.CronExpression;
+import com.cronexpression.builder.cron.CronExpressionBuilder;
 import com.cronexpression.meta.Expression;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -5,6 +7,8 @@ import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 
 import java.io.*;
+
+import static com.cronexpression.builder.cron.Factory.*;
 
 /**
  * @author Philipp Daniels
@@ -21,6 +25,21 @@ public class Velocity {
         ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "src/main/resources/templates");
         ve.init();
 
+        VelocityContext context = new VelocityContext();
+        context.put("expression", cron().yearly().inMarch().on(day(10)).at(hour(12), minute(55)));
+
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
+        Template template = ve.getTemplate("expression.xml.vm");
+        template.merge(context, writer);
+        writer.flush();
+        writer.close();
+    }
+
+    private static CronExpression cron() {
+        return new CronExpressionBuilder();
+    }
+
+    private static void wrong() throws IOException {
         Expression expression = new ExampleExpression();
         VelocityContext context = new VelocityContext();
         context.put("component", expression);
