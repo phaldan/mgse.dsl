@@ -11,7 +11,7 @@ public interface MinuteContext {
      * @param minute Minute of an hour
      * @return Returns cron expression string
      */
-    String at(Minute minute);
+    IExpression at(Minute minute);
 
     /**
      * @param start Interval start inclusive
